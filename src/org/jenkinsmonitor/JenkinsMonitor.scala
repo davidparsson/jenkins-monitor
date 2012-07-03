@@ -41,15 +41,15 @@ object BuildStatus extends Enumeration {
   type BuildStatus = Value
   val Disabled = Value(0)
   val Aborted = Value(1)
-  val Stable = Value(2)
+  val Success = Value(2)
   val Unstable = Value(3)
-  val Broken = Value(4)
+  val Failure = Value(4)
 
   def getStatusForColor(color: String) = {
     color match {
-      case "blue" | "blue_anime" => Stable
+      case "blue" | "blue_anime" => Success
       case "yellow" | "yellow_anime" => Unstable
-      case "red" | "red_anime" => Broken
+      case "red" | "red_anime" => Failure
       case "aborted" | "aborted_anime" => Aborted
       case _ => Disabled
     }
