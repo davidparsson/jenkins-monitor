@@ -24,7 +24,7 @@ object JenkinsMonitor {
     println()
 
     println("All jobs:")
-    for (val jobXml <- data \ "job") {
+    for (jobXml <- data \ "job") {
       val job = new Job(jobXml)
       jobs.add(job)
       println(job)
